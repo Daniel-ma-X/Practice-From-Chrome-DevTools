@@ -1,0 +1,22 @@
+@media screen and (max-width: 600px) {
+    .contenedor {
+    // grid-template-rows: repeat(5, auto);
+    grid-template-areas: 'header    header    header'
+                         'main      main      main'
+                         'aside     aside     aside'
+                         'box-1     box-1     box-2'
+                         'footer    footer    footer'
+;
+    }
+}
+@media screen and (max-width: 400px) {
+    .contenedor {
+    grid-template-areas: 'header    header    header'
+                         'main      main      main'
+                         'aside     aside     aside'
+                         'box-1     box-1     box-1'
+                         'box-2     box-2     box-2'
+                         'footer    footer    footer'
+;
+    }
+}

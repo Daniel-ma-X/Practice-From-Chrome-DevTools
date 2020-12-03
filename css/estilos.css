@@ -8,7 +8,7 @@
 
 .contenedor {
   width: 90%;
-  max-width: 1000px;
+  max-width: 900px;
   height: 100vh;
   margin: 10px auto;
   display: -ms-grid;
@@ -18,7 +18,9 @@
       grid-template-columns: repeat(3, 1fr);
   -ms-grid-rows: (auto)[4];
       grid-template-rows: repeat(4, auto);
-      grid-template-areas: 'header    header    header' 'main      main      aside' 'box-1     box-2   aside' 'footer    footer    footer';
+  grid-auto-rows: auto;
+  grid-auto-rows: auto;
+      grid-template-areas: 'header    header    header' 'main      main      aside' 'box-1     box-2     aside' 'footer    footer    footer';
 }
 
 .contenedor header {
@@ -29,7 +31,13 @@
   background-color: #2c3e50;
   font-size: 20px;
   color: white;
-  padding: 10px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contenedor main {
@@ -49,6 +57,7 @@
 
 .contenedor main p {
   text-align: justify;
+  line-height: 25px;
 }
 
 .contenedor aside {
@@ -73,11 +82,23 @@
           flex-direction: column;
 }
 
+.contenedor aside h2 {
+  font-weight: 300;
+}
+
 .box-1, .box-2 {
   background-color: #c0392b;
   padding: 20px;
   color: white;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .box-1 {
@@ -99,7 +120,25 @@
   grid-area: footer;
   background-color: #3498db;
   color: white;
-  padding: 10px;
-  font-size: 27px;
+  padding: 5px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor {
+        grid-template-areas: 'header    header    header' 'main      main      main' 'aside     aside     aside' 'box-1     box-1     box-2' 'footer    footer    footer';
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contenedor {
+        grid-template-areas: 'header    header    header' 'main      main      main' 'aside     aside     aside' 'box-1     box-1     box-1' 'box-2     box-2     box-2' 'footer    footer    footer';
+  }
 }
 /*# sourceMappingURL=estilos.css.map */
